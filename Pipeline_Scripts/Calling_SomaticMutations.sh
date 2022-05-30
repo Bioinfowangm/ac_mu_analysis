@@ -71,7 +71,7 @@ gatk FilterMutectCalls \
 gatk LeftAlignAndTrimVariants \
     -O ${Patient_Name}.somatic_m2_filtered_SplitMulti.vcf \
     -R $REFERENCE_GENOME\
-    -V ${Patient_name}.somatic_m2_filtered.vcf.gz \
+    -V ${Patient_Name}.somatic_m2_filtered.vcf.gz \
     -no-trim true --split-multi-allelics true
 
 #Part2: Calling mutation using Strelka2
