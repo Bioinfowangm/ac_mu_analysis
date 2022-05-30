@@ -89,7 +89,7 @@ cd ${Patient_Name}_analysis_path
 
 #Part3: Merge outputs from Mutect2 and Strelka2, annotate and perform filtering
 # h) Merge outputs
-perl obtain_var.pl $Patient_Name
+perl ./Other_Scripts/Merge_Somatic_2_ANNOVAR.pl $Patient_Name
 
 # i) Annotate with ANNOVAR
 table_annovar.pl \
@@ -98,4 +98,4 @@ table_annovar.pl \
     --outfile  ${Patient_Name}.annovar
 
 # j) Filtering
-perl filter.pl $Patient_Name
+perl ./Other_Scripts/Filter_Somatic.pl $Patient_Name
