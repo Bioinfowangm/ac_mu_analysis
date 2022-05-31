@@ -24,6 +24,6 @@ cnvkit.py batch \
     --output-dir results/ \
     --diagram --scatter
 
-# Re-center
+# Re-center (optional)
 cnvkit.py call ${TUMOR_BAM_base}.cnr  --purity $Purity --center-at $Diploid_logR -m clonal -x $Gender -o ${TUMOR_BAM_base}.call.cnr
 cnvkit.py call ${TUMOR_BAM_base}.cns  --purity $Purity --center-at $Diploid_logR -m clonal -x $Gender -v $Germline_vcf -o ${TUMOR_BAM_base}.call.cns
