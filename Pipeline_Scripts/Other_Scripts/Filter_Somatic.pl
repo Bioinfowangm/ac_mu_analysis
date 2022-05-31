@@ -10,6 +10,7 @@ while(<I_f0>){
     chomp;
     my @row = split /\t/,$_;
     my $id = join("\t",@row[0,1,2,3]);
+
     if(/Indel/){
         $artifact{$id} = 1;
         next;
