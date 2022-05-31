@@ -97,5 +97,13 @@ table_annovar.pl \
     humandb --buildver hg19 --otherinfo --thread 2 --remove --operation g,f,f,f,f,f,f,f,f,f,f,f --protocol refGene,exac03,gnomad_exome,esp6500siv2_all,1000g2015aug_all,avsnp150,ucsf500normT,ucsf500normN,cosmic89,cbio2019jun,clinvar2019mar,ljb26_all \
     --outfile  ${Patient_Name}.annovar
 
+# j) Run SOBDector
+cut -f 1-2,4,5 ${Patient_Name}.annovar.hg19_multianno.txt >${Patient_Name}_forSOBDetector.txt
+java -jar SOBDetector_v1.0.4.jar \
+    --input-type Table \
+    --input-variants ${Patient_Name}_forSOBDetector.txt \
+    --input-bam $TUMOR_BAM \
+    --output-variants ${Patient_Name}_SOBDetector.txt
+
 # j) Filtering
 perl ./Other_Scripts/Filter_Somatic.pl $Patient_Name
