@@ -1,12 +1,14 @@
 # Calling somatic mutations using Mutect2 and Strelka2
 
-#Key variables(Input/output files were mostly "consisdered" in the current work directory)
-$REFERENCE_GENOME # Genome Reference (hg19)
-$GERMLINE_BAM     # bam file name of normal sample
-$TUMOR_BAM        # bam file name of tumor sample
-$Patient_Name     # name of the patient
-$Germline_Resource # usually is af-only-gnomad.raw.sites.hg19.vcf.gz from BROAD website
-$Region_to_include # file with regions to include (usually with centromere and telomere removed)
+#Key variables(need to update for each patient)
+REFERENCE_GENOME="genome.fa"  # Genome Reference (hg19)
+GERMLINE_BAM_base=" "     # prefix of normal sample(not including '.bam')
+GERMLINE_BAM=${GERMLINE_BAM_base}.bam
+TUMOR_BAM_base=" "        # prefix of tumor bam sample(not including '.bam')
+TUMOR_BAM=${TUMOR_BAM_base}.bam
+Patient_Name=" "     # name of the patient
+Germline_Resource="af-only-gnomad.raw.sites.hg19.vcf.gz" #from BROAD website
+Region_to_include=" " # file with regions to include (usually with centromere and telomere removed)
 
 #Part1: Calling mutation using Mutect2
 
@@ -89,7 +91,7 @@ cd ${Patient_Name}_analysis_path
 
 #Part3: Merge outputs from Mutect2 and Strelka2, annotate and perform filtering
 # h) Merge outputs
-perl ./Other_Scripts/Merge_Somatic_2_ANNOVAR.pl $Patient_Name
+perl ./Function/Merge_Somatic_2_ANNOVAR.pl $Patient_Name
 
 # i) Annotate with ANNOVAR
 table_annovar.pl \
@@ -106,4 +108,4 @@ java -jar SOBDetector_v1.0.4.jar \
     --output-variants ${Patient_Name}_SOBDetector.txt
 
 # j) Filtering
-perl ./Other_Scripts/Filter_Somatic.pl $Patient_Name
+perl ./Function/Filter_Somatic.pl $Patient_Name
