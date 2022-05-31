@@ -1,12 +1,14 @@
-# Calling somatic mutations using Mutect2 and Strelka2
+# Calling Germline mutations using HaplotypeCaller
 
-#Key variables(paths were mostly not considered)
-$REFERENCE_GENOME # Genome Reference (hg19)
-$GERMLINE_BAM     # bam file name of normal sample
-$TUMOR_BAM        # bam file name of tumor sample
-$Patient_Name     # name of the patient
-$Germline_Resource # usually is af-only-gnomad.raw.sites.hg19.vcf.gz from BROAD website
-$Region_to_include # file with regions to include (usually with centromere and telomere removed)
+#Key variables(need to update for each patient)
+REFERENCE_GENOME="genome.fa"  # Genome Reference (hg19)
+GERMLINE_BAM_base=" "     # prefix of normal sample(not including '.bam')
+GERMLINE_BAM=${GERMLINE_BAM_base}.bam
+TUMOR_BAM_base=" "        # prefix of tumor bam sample(not including '.bam')
+TUMOR_BAM=${TUMOR_BAM_base}.bam
+Patient_Name=" "     # name of the patient
+Germline_Resource="af-only-gnomad.raw.sites.hg19.vcf.gz" #from BROAD website
+Region_to_include=" " # file with regions to include (usually with centromere and telomere removed)
 
 # a) Run HaplotypeCaller 
 gatk HaplotypeCaller \
@@ -23,7 +25,7 @@ gatk LeftAlignAndTrimVariants \
     -no-trim true --split-multi-allelics true
 
 # c) Prepare for ANNOVAR
-perl ./Other_Scripts/Germline_2ANNOVAR.pl ${Patient_Name}
+perl ./Function/Germline_2ANNOVAR.pl ${Patient_Name}
 
 # d) Annotate with ANNOVAR
 table_annovar.pl \
@@ -32,4 +34,4 @@ table_annovar.pl \
     --outfile ${Patient_Name}.annovar;
 
 # e) Filtering
-perl ./Other_Scripts/Filter_Germline.pl ${Patient_Name}.annovar.hg19_multianno.txt >${Patient_Name}.annovar.hg19_multianno.filtered.txt
+perl ./Function/Filter_Germline.pl ${Patient_Name}.annovar.hg19_multianno.txt >${Patient_Name}.annovar.hg19_multianno.filtered.txt
