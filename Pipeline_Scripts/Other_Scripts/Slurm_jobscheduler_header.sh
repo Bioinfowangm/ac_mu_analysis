@@ -1,4 +1,4 @@
-# Note: below is a header script for a Slurm linux job schedular
+# Note: below is a header script for a Slurm linux job scheduler
 # (4 threads on 1 node; memory 30GB; time limit of running is 48 hours)
 # if there submit multiple very similar jobs, consider using array
 
