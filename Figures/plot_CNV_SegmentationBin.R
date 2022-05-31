@@ -7,6 +7,7 @@ MELA0277_cnr = read.table("A_MELA_0277_T.cnr",header=T)
 MELA0277_cns = read.table("A_MELA_0277_T.cns",header=T)
 MELA0277_cnr$col = ifelse(grepl("PTPRJ",MELA0277_cnr$gene),"red","gray")
 MELA0277_cnr$size = ifelse(grepl("PTPRJ",MELA0277_cnr$gene),0.6,0.4)
+
 P_MELA0277 = ggplot(filter(MELA0277_cnr,chromosome=="chr11" & col=="gray" & (1:nrow(MELA0277_cnr))%%6 == 0),aes((start+end)/2/1000000,log2)) +
   geom_point(color="gray",size=0.03)+
   geom_segment(aes(x=start/1000000,xend=end/1000000,y=log2,yend=log2),color="darkorange1",lineend="round",size=1,data=filter(MELA0277_cns,chromosome=="chr11"))+
