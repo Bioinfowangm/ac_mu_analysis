@@ -1,6 +1,6 @@
 # Calling somatic mutations using Mutect2 and Strelka2
 
-#Key variables(paths were mostly not considered)
+#Key variables(Input/output files were mostly "consisdered" in the current work directory)
 $REFERENCE_GENOME # Genome Reference (hg19)
 $GERMLINE_BAM     # bam file name of normal sample
 $TUMOR_BAM        # bam file name of tumor sample
