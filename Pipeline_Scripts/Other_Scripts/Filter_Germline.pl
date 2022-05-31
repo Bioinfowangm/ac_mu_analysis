@@ -1,14 +1,4 @@
 #!/usr/bin/perl 
-#===========================================================================
-#
-#         FILE: filter.pl
-#        USAGE: perl filter.pl  
-#
-#       AUTHOR: Wang Meng, mengwang55@gmail.com
-#      VERSION: 1.0
-#      CREATED: 07/06/2021 04:04:24 PM
-#===========================================================================
-
 use strict;
 use warnings;
 
