@@ -17,9 +17,9 @@ cnvkit.py batch \
     ${*ALL_TUMOR_BAM*} \
     --normal ${*ALL_FEMALE_GERMLINE_BAM} \
     --targets $Target_Interval \
-    --annotate ../Intervals/refFlat.txt \
+    --annotate ../Related_Files/refFlat.txt \
     --fasta $REFERENCE_GENOME \
-    --access ../Intervals/access-5k-mappable.hg19.bed \
+    --access ../Related_Files/access-5k-mappable.hg19.bed \
     --output-reference my_reference.cnn \
     --output-dir results/ \
     --diagram --scatter

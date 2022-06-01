@@ -10,8 +10,8 @@ Diploid_logR=" "
 Target_Interval=" "
 Gender="x/y" # 'x': female; 'y': male
 
-cnvkit.py coverage -p 4 $GERMLINE_BAM ../Intervals/wgs_Target.bed -o ${GERMLINE_BAM_base}.targetcoverage.cnn
-cnvkit.py coverage -p 4 $TUMOR_BAM ../Intervals/wgs_Target.bed -o ${TUMOR_BAM_base}.targetcoverage.cnn
+cnvkit.py coverage -p 4 $GERMLINE_BAM ../Related_Files/wgs_Target.bed -o ${GERMLINE_BAM_base}.targetcoverage.cnn
+cnvkit.py coverage -p 4 $TUMOR_BAM ../Related_Files/wgs_Target.bed -o ${TUMOR_BAM_base}.targetcoverage.cnn
 
 # Obtain reference from female patients:
 cnvkit.py reference ${GERMLINE_BAM_base}.targetcoverage.cnn \

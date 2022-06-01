@@ -13,7 +13,7 @@ Region_to_include=" " # file with regions to include (usually with centromere an
 # a) Run HaplotypeCaller 
 gatk HaplotypeCaller \
     -R $REFERENCE_GENOME \
-    -L ../Intervals/hg19_RefSeq_CDSunique_add10bp.bed \
+    -L ../Related_Files/hg19_RefSeq_CDSunique_add10bp.bed \
     -I $GERMLINE_BAM \
     -O ${Patient_Name}.g.vcf.gz -ERC GVCF
 

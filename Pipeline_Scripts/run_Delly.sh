@@ -7,7 +7,7 @@ Patient_Name=" "     # name of the patient
 Samp_List=" "        # sample name of normal and tumor samples (see Delly2 webpage)
 
 delly call -g $REFERENCE_GENOME \
-    -x ../Intervals/human.hg19.excl.tsv \
+    -x ../Related_Files/human.hg19.excl.tsv \
     -o ${Patient_Name}.bcf \
     $TUMOR_BAM $GERMLINE_BAM
 

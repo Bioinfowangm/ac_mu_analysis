@@ -15,5 +15,5 @@ msisensor msi \
     -d hg19_msisensor.txt \
     -t $TUMOR_BAM \
     -n $GERMLINE_BAM \
-    -e ../Intervals/hg19_RefSeq_CDSunique_add10bp.bed \
+    -e ../Related_Files/hg19_RefSeq_CDSunique_add10bp.bed \
     -o ${Patient_Name}.MSIsensor

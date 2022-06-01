@@ -5,4 +5,4 @@ Segmentation_fn=" " # file with segmentation data of all samples
 gistic2 \
     -b $Base_dir \
     -seg $Segmentation_fn \
-    -refgene ../Intervals/hg19.mat
+    -refgene ../Related_Files/hg19.mat
