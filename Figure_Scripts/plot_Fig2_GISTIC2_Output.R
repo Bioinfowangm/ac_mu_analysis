@@ -11,7 +11,7 @@ dat$color = ifelse(dat$X.log10.q.value.< 1,"gray","red")
 dat$Position = (dat$Start + dat$End)/2
 dat$Chromosome = paste0("chr",dat$Chromosome)
 
-chrlen = read.table("../Data_Files/chrLength.txt",header=T)
+chrlen = read.table("../Related_Files/chrLength.txt",header=T)
 chrlen$col = rep(c("white","black"),12)
 dat$aPosition = chrlen[match(dat$Chromosome,chrlen$Chr),]$aStart + dat$Position -1
 
