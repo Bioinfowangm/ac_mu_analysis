@@ -57,7 +57,6 @@ ggplot(Mucosal,aes(Primary_Site_Classification,TMB))+#geom_boxplot(outlier.shape
   geom_segment(aes(x=0.75,xend=1.25,y=2.16,yend=2.16),color="lightblue3")+
   geom_segment(aes(x=1.75,xend=2.25,y=1.71,yend=1.71),color="lightblue3")+
   geom_segment(aes(x=2.75,xend=3.25,y=2.98,yend=2.98),color="lightblue3")+
-  #annotate("text",x=1.5,y=35,label="italic(P) == 1.97e-05",size=2.5,parse=T)+
   scale_x_discrete(labels=c("Gastrointestinal","Genitourinary","Sinonasal/oropharyngeal"))+
   theme_bw()+
   theme(
@@ -83,7 +82,6 @@ ggplot(Mucosal,aes(Primary_Site_Classification,SBS7))+#geom_boxplot(outlier.shap
   geom_segment(aes(x=0.75,xend=1.25,y=0,yend=0),color="lightblue3")+
   geom_segment(aes(x=1.75,xend=2.25,y=0,yend=0),color="lightblue3")+
   geom_segment(aes(x=2.75,xend=3.25,y=0.097,yend=0.097),color="lightblue3")+
-  #annotate("text",x=1.5,y=1.04,label="italic(P) == 0.012",size=2.5,parse=T)+
   scale_x_discrete(labels=c("Gastrointestinal","Genitourinary","Sinonasal/oropharyngeal"))+
   theme_bw()+
   theme(
