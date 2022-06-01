@@ -1,4 +1,4 @@
-#Code for Figure 6A. Also used for Figures 7C-7E and S13, with modifications
+#Code for Figure 6A. Also used for Figures S13, with modifications
 
 library(ggplot2)
 library(dplyr)
