@@ -1,4 +1,4 @@
-#Code for Figure 1C. Also used for Figure 1D and S11, with modification of file name, path, gene name, and genome coordinate
+#Code for Figure 1C. Also used for Figure 1D and S11, with modifications
 # bin level log2 Ratio (.cnr) and segmented (.cns) files from CNVkit were used as input
 
 library(ggplot2)
