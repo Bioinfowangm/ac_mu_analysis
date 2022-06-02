@@ -9,6 +9,6 @@ The **Pipeline_Scripts** folder contains scripts used for:
 - Estimating degree of microsatellite instability (_MISsensor_)
 - Survival analysis (R package _survival_ )
 
-The **Figure_Scripts** folder includes R scripts used for plotting figures in the manuscript.
+The **Figure_Scripts** folder includes R scripts used to plot figures in the manuscript.
 
-The **Related_Files** folder includes some annotation files required in the pipeline.
+The **Related_Files** folder includes some annotation files required by the pipeline.
